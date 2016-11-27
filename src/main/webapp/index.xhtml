@@ -236,15 +236,15 @@
                         <p:tab id="register" title="Registration">
                             <p:panel header="Registration Information"  style="height: 370px">
                                 <p:messages />
-
+<!--
                                 <reusable:recomp
                                     facultyLable="Faculty"
                                     facultyValue="#{registerController.faculty.name}"
                                     specialtyLable="Specialty"
                                     specialtyValue="#{registerController.specialty.name}"
                                     />
+-->
                                 <h:panelGrid columns="2" columnClasses="label, value">
-
 
                                     <h:outputText value="Level: " />
                                     <p:inputText value="#{registerController.student.eduLevel}"/>
@@ -255,10 +255,12 @@
                                     <h:outputText value="Payment type: " />
                                     <p:inputText value="#{registerController.student.paymenttype}"/>
 
+                                    <h:outputText value ="Try"/>
+                                    <p:commandButton value="Register" ajax="false" action="#{registerController.register}" />
                                 </h:panelGrid>
                             </p:panel>
                         </p:tab>
-
+<!--
                         <p:tab id="history" title="History">
                             <p:panel header="Education History"  style="height: 370px"> 
                                 <p:panelGrid columns="2">
@@ -337,7 +339,7 @@
 
                             </p:panel>
                         </p:tab>
-
+-->
                     </p:wizard>
                 </h:form>
 

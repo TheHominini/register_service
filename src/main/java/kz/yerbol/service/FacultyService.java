@@ -10,4 +10,6 @@ import kz.yerbol.domain.Faculty;
 public interface FacultyService {
     
     public List<Faculty> getFacultyList();
+    public void addFaculty();
+    public void removeFaculty();
 }

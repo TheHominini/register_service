@@ -49,34 +49,34 @@
                                 <p:messages />
                                 <h:panelGrid columns="2" columnClasses="label, value">
                                     <h:outputText value="Firstname: " />
-                                    <p:inputText value="#{studentWizard.student.firstName}" label="Firstname"/>
+                                    <p:inputText value="#{registerController.student.firstName}" label="Firstname"/>
 
                                     <h:outputText value="Lastname: " />
-                                    <p:inputText value="#{studentWizard.student.lastName}" label="Lastname"/>
+                                    <p:inputText value="#{registerController.student.lastName}" label="Lastname"/>
 
                                     <h:outputText value="Birthday: " />
-                                    <p:inputMask value="#{studentWizard.student.birthday}" label="Birthday" mask="99/99/9999"/>
+                                    <p:inputMask value="#{registerController.student.birthday}" label="Birthday" mask="99/99/9999"/>
 
                                     <h:outputText value="Gender: " />
-                                    <p:selectOneRadio value="#{studentWizard.student.gender}" label="Gender">
+                                    <p:selectOneRadio value="#{registerController.student.gender}" label="Gender">
                                         <f:selectItem itemLabel="male" itemValue="male"/>
                                         <f:selectItem itemLabel="female" itemValue="female"/>
                                     </p:selectOneRadio>
 
                                     <h:outputText value="Phone 1: " />
-                                    <p:inputMask value="#{studentWizard.student.telephone1}" mask="8(999)999-99-99"/>
+                                    <p:inputMask value="#{registerController.student.telephone1}" mask="8(999)999-99-99"/>
 
                                     <h:outputText value="Phone 2: " />
-                                    <p:inputMask value="#{studentWizard.student.telephone2}" mask="8(999)999-99-99"/>
+                                    <p:inputMask value="#{registerController.student.telephone2}" mask="8(999)999-99-99"/>
 
                                     <h:outputText value="Email 1: " />
-                                    <p:inputText value="#{studentWizard.student.email1}" />
+                                    <p:inputText value="#{registerController.student.email1}" />
 
                                     <h:outputText value="Email 2: " />
-                                    <p:inputText value="#{studentWizard.student.email2}" />
+                                    <p:inputText value="#{registerController.student.email2}" />
 
                                     <h:outputText value="Address: " />
-                                    <p:inputText value="#{studentWizard.student.address}" />
+                                    <p:inputText value="#{registerController.student.address}" />
 
 
                                 </h:panelGrid>
@@ -91,19 +91,19 @@
                                 <h:panelGrid columns="2" columnClasses="label, value">
 
                                     <h:outputText value="Document type: " />
-                                    <p:selectOneRadio value="#{studentWizard.student.docType}" label="Document type">
+                                    <p:selectOneRadio value="#{registerController.student.docType}" label="Document type">
                                         <f:selectItem itemLabel="ID card" itemValue="idCard"/>
                                         <f:selectItem itemLabel="Pasport" itemValue="pasport"/>
                                     </p:selectOneRadio>
 
                                     <h:outputText value="Document number: " />
-                                    <p:inputText value="#{studentWizard.student.docNumber}"/>
+                                    <p:inputText value="#{registerController.student.docNumber}"/>
 
                                     <h:outputText value="Expire time: " />
-                                    <p:inputText value="#{studentWizard.student.docExpiretime}"/>
+                                    <p:inputText value="#{registerController.student.docExpiretime}"/>
 
                                     <h:outputText value="Issue organization: " />
-                                    <p:selectOneMenu value="#{studentWizard.student.docIssueOrgnazation}" label="Document type">
+                                    <p:selectOneMenu value="#{registerController.student.docIssueOrgnazation}" label="Document type">
                                         <f:selectItem itemLabel="MIA" itemValue="mia"/>
                                         <f:selectItem itemLabel="NSC" itemValue="nsc"/>
                                     </p:selectOneMenu>
@@ -132,7 +132,7 @@
                                         </p:column>
 
                                         <p:column>
-                                            <p:inputText value="#{studentWizard.student.fatherName}" label="Father name"/>
+                                            <p:inputText value="#{registerController.student.fatherName}" label="Father name"/>
                                         </p:column>
 
                                         <p:column>
@@ -140,7 +140,7 @@
                                         </p:column>
 
                                         <p:column>
-                                            <p:inputText value="#{studentWizard.student.matherName}" label="Mother name"/>
+                                            <p:inputText value="#{registerController.student.matherName}" label="Mother name"/>
                                         </p:column>
                                     </p:row>
                                     <p:row>
@@ -149,7 +149,7 @@
                                         </p:column>
 
                                         <p:column>
-                                            <p:inputText value="#{studentWizard.student.fatherMobilePhone}"/>
+                                            <p:inputText value="#{registerController.student.fatherMobilePhone}"/>
                                         </p:column>
 
                                         <p:column>
@@ -157,7 +157,7 @@
                                         </p:column>
 
                                         <p:column>
-                                            <p:inputText value="#{studentWizard.student.matherMobilePhone}"/>
+                                            <p:inputText value="#{registerController.student.matherMobilePhone}"/>
                                         </p:column>
                                     </p:row>
                                     <p:row>
@@ -166,7 +166,7 @@
                                         </p:column>
 
                                         <p:column>
-                                            <p:inputText value="#{studentWizard.student.fatherHomePhone}"/>
+                                            <p:inputText value="#{registerController.student.fatherHomePhone}"/>
                                         </p:column>
 
                                         <p:column>
@@ -174,7 +174,7 @@
                                         </p:column>
 
                                         <p:column>
-                                            <p:inputText value="#{studentWizard.student.matherHomePhone}"/>
+                                            <p:inputText value="#{registerController.student.matherHomePhone}"/>
                                         </p:column>
                                     </p:row>
                                     <p:row>
@@ -183,7 +183,7 @@
                                         </p:column>
 
                                         <p:column>
-                                            <p:inputText value="#{studentWizard.student.fatherWorkingPlace}"/>
+                                            <p:inputText value="#{registerController.student.fatherWorkingPlace}"/>
                                         </p:column>
 
                                         <p:column>
@@ -191,7 +191,7 @@
                                         </p:column>
 
                                         <p:column>
-                                            <p:inputText value="#{studentWizard.student.matherWorkingPlace}"/>
+                                            <p:inputText value="#{registerController.student.matherWorkingPlace}"/>
                                         </p:column>
                                     </p:row>
                                     <p:row>
@@ -200,7 +200,7 @@
                                         </p:column>
 
                                         <p:column>
-                                            <p:inputText value="#{studentWizard.student.fatherEmail}"/>
+                                            <p:inputText value="#{registerController.student.fatherEmail}"/>
                                         </p:column>
 
                                         <p:column>
@@ -208,7 +208,7 @@
                                         </p:column>
 
                                         <p:column>
-                                            <p:inputText value="#{studentWizard.student.matherEmail}"/>
+                                            <p:inputText value="#{registerController.student.matherEmail}"/>
                                         </p:column>
                                     </p:row>
                                     <p:row>
@@ -217,7 +217,7 @@
                                         </p:column>
 
                                         <p:column>
-                                            <p:inputText value="#{studentWizard.student.fatherAdress}"/>
+                                            <p:inputText value="#{registerController.student.fatherAdress}"/>
                                         </p:column>
 
                                         <p:column>
@@ -225,7 +225,7 @@
                                         </p:column>
 
                                         <p:column>
-                                            <p:inputText value="#{studentWizard.student.matherAddress}"/>
+                                            <p:inputText value="#{registerController.student.matherAddress}"/>
                                         </p:column>
                                     </p:row>
 
@@ -236,29 +236,31 @@
                         <p:tab id="register" title="Registration">
                             <p:panel header="Registration Information"  style="height: 370px">
                                 <p:messages />
-
+<!--
                                 <reusable:recomp
                                     facultyLable="Faculty"
-                                    facultyValue="#{facultyWizard.faculty.name}"
+                                    facultyValue="#{registerController.faculty.name}"
                                     specialtyLable="Specialty"
-                                    specialtyValue="#{specialtyWizard.specialty.name}"
+                                    specialtyValue="#{registerController.specialty.name}"
                                     />
+-->
                                 <h:panelGrid columns="2" columnClasses="label, value">
 
-
                                     <h:outputText value="Level: " />
-                                    <p:inputText value="#{studentWizard.student.eduLevel}"/>
+                                    <p:inputText value="#{registerController.student.eduLevel}"/>
 
                                     <h:outputText value="Entry year: " />
-                                    <p:inputText value="#{studentWizard.student.entryYear}"/>
+                                    <p:inputText value="#{registerController.student.entryYear}"/>
 
                                     <h:outputText value="Payment type: " />
-                                    <p:inputText value="#{studentWizard.student.paymenttype}"/>
+                                    <p:inputText value="#{registerController.student.paymenttype}"/>
 
+                                    <h:outputText value ="Try"/>
+                                    <p:commandButton value="Register" ajax="false" action="#{registerController.register}" />
                                 </h:panelGrid>
                             </p:panel>
                         </p:tab>
-
+<!--
                         <p:tab id="history" title="History">
                             <p:panel header="Education History"  style="height: 370px"> 
                                 <p:panelGrid columns="2">
@@ -337,60 +339,7 @@
 
                             </p:panel>
                         </p:tab>
-
-                        
-
-
-                        <!--
-                                                <p:tab id="confirm" title="Confirmation">
-                                                    <p:panel header="Confirmation"  style="height: 370px">
-                                                        <h:panelGrid id="confirmation" columns="3" columnClasses="grid,grid,grid">
-                                                            
-                                                            <h:panelGrid columns="2" columnClasses="label, value">
-                                                                
-                                                                <h:outputText value="Firstname: " />
-                                                                <h:outputText value="#{studentWizard.student.firstName}" styleClass="outputLabel"/>
-                        
-                                                                <h:outputText value="Lastname: " />
-                                                                <h:outputText value="#{studentWizard.student.lastName}" styleClass="outputLabel"/>
-                        
-                                                                <h:outputText value="Birthday: " />
-                                                                <h:outputText value="#{studentWizard.student.birthday}" styleClass="outputLabel"/>
-                        
-                                                                <h:outputText value="Gender: " />
-                                                                <h:outputText value="#{studentWizard.student.gender}" styleClass="outputLabel"/>
-                        
-                                                                <h:outputText value="Phone 1: " />
-                                                                <h:outputText value="#{studentWizard.student.telephone1}" styleClass="outputLabel"/>
-                        
-                                                                <h:outputText value="Phone 2: " />
-                                                                <h:outputText value="#{studentWizard.student.telephone2}" styleClass="outputLabel" />
-                        
-                                                                <h:outputText value="Email 1: " />
-                                                                <h:outputText value="#{studentWizard.student.email1}" styleClass="outputLabel"/>
-                        
-                                                                <h:outputText value="Email 2: " />
-                                                                <h:outputText value="#{studentWizard.student.email2}" styleClass="outputLabel"/>
-                        
-                                                                <h:outputText value="Address: " />
-                                                                <h:outputText value="#{studentWizard.student.address}" styleClass="outputLabel"/>
-                        
-                                                            </h:panelGrid>
-                        
-                                                            <h:panelGrid columns="2" columnClasses="label, value">
-                        
-                                                            </h:panelGrid>
-                        
-                                                            <h:panelGrid columns="2" columnClasses="label, value">
-                        
-                                                            </h:panelGrid>
-                                                        </h:panelGrid>
-                        
-                                                       <p:commandButton value="Submit" actionListener="" process="@this"/> 
-                                                    </p:panel>
-                                                </p:tab>
-                        -->
-
+-->
                     </p:wizard>
                 </h:form>
 

@@ -1,6 +1,12 @@
-kz\yerbol\domain\Specialty.class
-kz\yerbol\view\StudentBean.class
-kz\yerbol\domain\Educationhistory.class
-kz\yerbol\domain\Faculty.class
+kz\yerbol\service\StudentService.class
+kz\yerbol\controller\RegisterController.class
 kz\yerbol\domain\Student.class
+kz\yerbol\controller\HibernateUtil.class
+kz\yerbol\service\SpecialtyService.class
 kz\yerbol\service\FacultyService.class
+kz\yerbol\domain\Specialty.class
+kz\yerbol\service\EducationhistoryService.class
+kz\yerbol\domain\Educationhistory.class
+kz\yerbol\service\impl\EducationhistoryServiceImpl.class
+kz\yerbol\domain\Faculty.class
+kz\yerbol\service\impl\StudentServiceImpl.class

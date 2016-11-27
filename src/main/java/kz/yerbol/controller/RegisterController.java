@@ -24,6 +24,16 @@ public class RegisterController implements Serializable {
 
   public void register(){
     
+    StudentServiceImpl studentService = new StudentServiceImpl();
+    //EducationhistoryServiceImpl educationhistoryService = new EducationhistoryServiceImpl();
+    
+    try {
+      studentService.addStudent(student, specialty.getIdspecialty());
+    }
+    catch(Exception ex) {
+      ex.printStackTrace();
+    }
+
   }
 
 
