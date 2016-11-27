@@ -1,0 +1,6 @@
+kz\yerbol\domain\Specialty.class
+kz\yerbol\view\StudentBean.class
+kz\yerbol\domain\Educationhistory.class
+kz\yerbol\domain\Faculty.class
+kz\yerbol\domain\Student.class
+kz\yerbol\service\FacultyService.class

@@ -1,0 +1,348 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:reusable="http://xmlns.jcp.org/jsf/composite/reusable">
+    <h:head>
+        <title>Registration</title>
+        <style>
+            .ui-layout-pane-center {
+                border: 0;
+            }
+            .ui-layout-pane-west {
+
+            }
+            .ui-panelgrid>*>tr,
+            .ui-panelgrid .ui-panelgrid-cell {
+                border: none;
+            }
+        </style>
+    </h:head>
+    <h:body>
+
+        <p:layout fullPage="true" >
+
+            <p:layoutUnit position="north" size="50">
+                <h:outputText value="Top content." />
+            </p:layoutUnit>
+
+            <p:layoutUnit position="west" size="200">
+
+                <p:button value="Add"/>
+
+                <p:spacer height="30px;"/>
+
+                <p:button value="Search"/>
+            </p:layoutUnit>
+
+
+
+            <p:layoutUnit position="center">
+
+                <h:form enctype="multipart/form-data">
+
+                    <p:wizard>
+                        <p:tab id="personal" title="Personal">
+                            <p:panel header="Personal Details" style="height: 370px">
+                                <p:messages />
+                                <h:panelGrid columns="2" columnClasses="label, value">
+                                    <h:outputText value="Firstname: " />
+                                    <p:inputText value="#{registerController.student.firstName}" label="Firstname"/>
+
+                                    <h:outputText value="Lastname: " />
+                                    <p:inputText value="#{registerController.student.lastName}" label="Lastname"/>
+
+                                    <h:outputText value="Birthday: " />
+                                    <p:inputMask value="#{registerController.student.birthday}" label="Birthday" mask="99/99/9999"/>
+
+                                    <h:outputText value="Gender: " />
+                                    <p:selectOneRadio value="#{registerController.student.gender}" label="Gender">
+                                        <f:selectItem itemLabel="male" itemValue="male"/>
+                                        <f:selectItem itemLabel="female" itemValue="female"/>
+                                    </p:selectOneRadio>
+
+                                    <h:outputText value="Phone 1: " />
+                                    <p:inputMask value="#{registerController.student.telephone1}" mask="8(999)999-99-99"/>
+
+                                    <h:outputText value="Phone 2: " />
+                                    <p:inputMask value="#{registerController.student.telephone2}" mask="8(999)999-99-99"/>
+
+                                    <h:outputText value="Email 1: " />
+                                    <p:inputText value="#{registerController.student.email1}" />
+
+                                    <h:outputText value="Email 2: " />
+                                    <p:inputText value="#{registerController.student.email2}" />
+
+                                    <h:outputText value="Address: " />
+                                    <p:inputText value="#{registerController.student.address}" />
+
+
+                                </h:panelGrid>
+                            </p:panel>
+                        </p:tab>
+
+
+
+                        <p:tab id="contact" title="Document">
+                            <p:panel header="Document Information" style="height: 370px">
+                                <p:messages />
+                                <h:panelGrid columns="2" columnClasses="label, value">
+
+                                    <h:outputText value="Document type: " />
+                                    <p:selectOneRadio value="#{registerController.student.docType}" label="Document type">
+                                        <f:selectItem itemLabel="ID card" itemValue="idCard"/>
+                                        <f:selectItem itemLabel="Pasport" itemValue="pasport"/>
+                                    </p:selectOneRadio>
+
+                                    <h:outputText value="Document number: " />
+                                    <p:inputText value="#{registerController.student.docNumber}"/>
+
+                                    <h:outputText value="Expire time: " />
+                                    <p:inputText value="#{registerController.student.docExpiretime}"/>
+
+                                    <h:outputText value="Issue organization: " />
+                                    <p:selectOneMenu value="#{registerController.student.docIssueOrgnazation}" label="Document type">
+                                        <f:selectItem itemLabel="MIA" itemValue="mia"/>
+                                        <f:selectItem itemLabel="NSC" itemValue="nsc"/>
+                                    </p:selectOneMenu>
+
+                                </h:panelGrid>
+                            </p:panel>
+                        </p:tab>
+
+                        <p:tab id="parent" title="Parents">
+                            <p:panel header="Parents Information"  style="height: 370px">
+                                <p:messages />
+                                <p:panelGrid>
+                                    <f:facet name="header">
+
+                                        <p:row>
+
+                                            <p:column colspan="2">Father Information</p:column>
+                                            <p:column colspan="2">Mother Information</p:column>
+
+                                        </p:row>
+
+                                    </f:facet>
+                                    <p:row>
+                                        <p:column>
+                                            <h:outputText value="Father name: " />
+                                        </p:column>
+
+                                        <p:column>
+                                            <p:inputText value="#{registerController.student.fatherName}" label="Father name"/>
+                                        </p:column>
+
+                                        <p:column>
+                                            <h:outputText value="Mother name: " />
+                                        </p:column>
+
+                                        <p:column>
+                                            <p:inputText value="#{registerController.student.matherName}" label="Mother name"/>
+                                        </p:column>
+                                    </p:row>
+                                    <p:row>
+                                        <p:column>
+                                            <h:outputText value="Father phone: " />
+                                        </p:column>
+
+                                        <p:column>
+                                            <p:inputText value="#{registerController.student.fatherMobilePhone}"/>
+                                        </p:column>
+
+                                        <p:column>
+                                            <h:outputText value="Mother phone: " />
+                                        </p:column>
+
+                                        <p:column>
+                                            <p:inputText value="#{registerController.student.matherMobilePhone}"/>
+                                        </p:column>
+                                    </p:row>
+                                    <p:row>
+                                        <p:column>
+                                            <h:outputText value="Father home phone: " />
+                                        </p:column>
+
+                                        <p:column>
+                                            <p:inputText value="#{registerController.student.fatherHomePhone}"/>
+                                        </p:column>
+
+                                        <p:column>
+                                            <h:outputText value="Mother home phone: " />
+                                        </p:column>
+
+                                        <p:column>
+                                            <p:inputText value="#{registerController.student.matherHomePhone}"/>
+                                        </p:column>
+                                    </p:row>
+                                    <p:row>
+                                        <p:column>
+                                            <h:outputText value="Father job: " />
+                                        </p:column>
+
+                                        <p:column>
+                                            <p:inputText value="#{registerController.student.fatherWorkingPlace}"/>
+                                        </p:column>
+
+                                        <p:column>
+                                            <h:outputText value="Mother job: " />
+                                        </p:column>
+
+                                        <p:column>
+                                            <p:inputText value="#{registerController.student.matherWorkingPlace}"/>
+                                        </p:column>
+                                    </p:row>
+                                    <p:row>
+                                        <p:column>
+                                            <h:outputText value="Father email: " />
+                                        </p:column>
+
+                                        <p:column>
+                                            <p:inputText value="#{registerController.student.fatherEmail}"/>
+                                        </p:column>
+
+                                        <p:column>
+                                            <h:outputText value="Mother email: " />
+                                        </p:column>
+
+                                        <p:column>
+                                            <p:inputText value="#{registerController.student.matherEmail}"/>
+                                        </p:column>
+                                    </p:row>
+                                    <p:row>
+                                        <p:column>
+                                            <h:outputText value="Father address: " />
+                                        </p:column>
+
+                                        <p:column>
+                                            <p:inputText value="#{registerController.student.fatherAdress}"/>
+                                        </p:column>
+
+                                        <p:column>
+                                            <h:outputText value="Mother address: " />
+                                        </p:column>
+
+                                        <p:column>
+                                            <p:inputText value="#{registerController.student.matherAddress}"/>
+                                        </p:column>
+                                    </p:row>
+
+                                </p:panelGrid>
+                            </p:panel>
+                        </p:tab>
+
+                        <p:tab id="register" title="Registration">
+                            <p:panel header="Registration Information"  style="height: 370px">
+                                <p:messages />
+
+                                <reusable:recomp
+                                    facultyLable="Faculty"
+                                    facultyValue="#{registerController.faculty.name}"
+                                    specialtyLable="Specialty"
+                                    specialtyValue="#{registerController.specialty.name}"
+                                    />
+                                <h:panelGrid columns="2" columnClasses="label, value">
+
+
+                                    <h:outputText value="Level: " />
+                                    <p:inputText value="#{registerController.student.eduLevel}"/>
+
+                                    <h:outputText value="Entry year: " />
+                                    <p:inputText value="#{registerController.student.entryYear}"/>
+
+                                    <h:outputText value="Payment type: " />
+                                    <p:inputText value="#{registerController.student.paymenttype}"/>
+
+                                </h:panelGrid>
+                            </p:panel>
+                        </p:tab>
+
+                        <p:tab id="history" title="History">
+                            <p:panel header="Education History"  style="height: 370px"> 
+                                <p:panelGrid columns="2">
+                                    <h:outputLabel for="item" value="Place Name: " />
+                                    <p:inputText  value="#{item.item}"/>
+                                    <h:outputLabel for="qty" value="During time: " />
+                                    <p:inputText value="#{item.qty}"/>
+                                    <h:outputLabel for="price" value="Address: " />
+                                    <p:inputText  value="#{item.price}"/>
+                                    <f:facet name="footer">
+                                        <h:commandButton value="Add Item" action="#{item.addAction}"/>
+                                    </f:facet>
+                                </p:panelGrid>
+                                <p:spacer height="30px;"/>
+                                <p:dataTable value="#{item.orderList}" var="o"  widgetVar="50" style="width: 370px;" editable="true">
+                                    <f:facet name="header">  
+                                        Order List  
+                                    </f:facet>
+                                    <p:ajax event="rowEdit" listener="#{item.onEdit}" />  
+                                    <p:ajax event="rowEditCancel" listener="#{item.onCancel}" /> 
+                                    <p:column>
+                                        <f:facet name="header">  
+                                            <h:outputText value="Place Name" />  
+                                        </f:facet>
+                                        <p:cellEditor>  
+                                            <f:facet name="output">  
+                                                <h:outputText value="#{o.item}" />  
+                                            </f:facet>  
+                                            <f:facet name="input">  
+                                                <p:inputText value="#{o.item}" style="width:100%"/>  
+                                            </f:facet>  
+                                        </p:cellEditor> 
+                                    </p:column>
+
+                                    <p:column>
+                                        <f:facet name="header">  
+                                            <h:outputText value="During time" />  
+                                        </f:facet>
+                                        <p:cellEditor>  
+                                            <f:facet name="output">  
+                                                <h:outputText value="#{o.qty}" />  
+                                            </f:facet>  
+                                            <f:facet name="input">  
+                                                <p:inputText value="#{o.qty}" style="width:100%"/>  
+                                            </f:facet>  
+                                        </p:cellEditor>
+                                    </p:column>
+
+                                    <p:column>
+                                        <f:facet name="header">  
+                                            <h:outputText value="Address" />  
+                                        </f:facet>
+                                        <p:cellEditor>  
+                                            <f:facet name="output">  
+                                                <h:outputText value="#{o.price}" />  
+                                            </f:facet>  
+                                            <f:facet name="input">  
+                                                <p:inputText value="#{o.price}" style="width:100%"/>  
+                                            </f:facet>  
+                                        </p:cellEditor>
+                                    </p:column>               
+                                    <p:column headerText="Opt" style="width:40px">  
+                                        <p:rowEditor />  
+                                    </p:column> 
+                                </p:dataTable>
+                            </p:panel>
+                        </p:tab>
+
+                        <p:tab id="address" title="Photo">
+                            <p:panel header="Upload Photo"  style="height: 370px">
+                                
+
+                                    <p:fileUpload value="#{fileUploadView.file}" mode="simple" />
+                                    <p:commandButton value="Register" ajax="false" action="email" />
+
+
+                            </p:panel>
+                        </p:tab>
+
+                    </p:wizard>
+                </h:form>
+
+            </p:layoutUnit>
+        </p:layout>
+    </h:body>
+</html>
+
