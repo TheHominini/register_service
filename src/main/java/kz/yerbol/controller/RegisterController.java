@@ -5,6 +5,8 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
+import java.util.ArrayList;
+import org.primefaces.event.RowEditEvent;
 import kz.yerbol.domain.*;
 import kz.yerbol.service.impl.*;
 
@@ -21,6 +23,34 @@ public class RegisterController implements Serializable {
   private Faculty faculty = new Faculty();
   private Specialty specialty = new Specialty();
   private Educationhistory educationhistory = new Educationhistory();
+
+  private static final ArrayList<Educationhistory> historyList = new ArrayList<Educationhistory>();
+ 
+  public ArrayList<Educationhistory> getHistoryList() {
+        return historyList;
+  }
+ 
+  public String addAction() {
+    Student st = new Student();
+    Educationhistory orderitem = new Educationhistory(st, educationhistory.getEducatedPlaceName(), educationhistory.getDuringTime(),
+     educationhistory.getAnddress());
+    historyList.add(orderitem);
+ 
+    educationhistory.setEducatedPlaceName("");
+    educationhistory.setDuringTime("");
+    educationhistory.setAnddress("");
+    return null;
+  }
+    public void onEdit(RowEditEvent event) {  
+        FacesMessage msg = new FacesMessage("Item Edited",((Educationhistory) event.getObject()).getEducatedPlaceName());  
+        FacesContext.getCurrentInstance().addMessage(null, msg);  
+    }  
+       
+    public void onCancel(RowEditEvent event) {  
+        FacesMessage msg = new FacesMessage("Item Cancelled");   
+        FacesContext.getCurrentInstance().addMessage(null, msg); 
+        historyList.remove((Educationhistory) event.getObject());
+    }
 
   public void register(){
     

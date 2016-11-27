@@ -260,37 +260,38 @@
                                 </h:panelGrid>
                             </p:panel>
                         </p:tab>
-<!--
+                        
+
                         <p:tab id="history" title="History">
                             <p:panel header="Education History"  style="height: 370px"> 
                                 <p:panelGrid columns="2">
                                     <h:outputLabel for="item" value="Place Name: " />
-                                    <p:inputText  value="#{item.item}"/>
+                                    <p:inputText  value="#{registerController.educationhistory.educatedPlaceName}"/>
                                     <h:outputLabel for="qty" value="During time: " />
-                                    <p:inputText value="#{item.qty}"/>
+                                    <p:inputText value="#{registerController.educationhistory.duringTime}"/>
                                     <h:outputLabel for="price" value="Address: " />
-                                    <p:inputText  value="#{item.price}"/>
+                                    <p:inputText  value="#{registerController.educationhistory.anddress}"/>
                                     <f:facet name="footer">
-                                        <h:commandButton value="Add Item" action="#{item.addAction}"/>
+                                        <h:commandButton value="Add Item" action="#{registerController.addAction}"/>
                                     </f:facet>
                                 </p:panelGrid>
                                 <p:spacer height="30px;"/>
-                                <p:dataTable value="#{item.orderList}" var="o"  widgetVar="50" style="width: 370px;" editable="true">
+                                <p:dataTable value="#{registerController.historyList}" var="o"  widgetVar="50" style="width: 370px;" editable="true">
                                     <f:facet name="header">  
                                         Order List  
                                     </f:facet>
-                                    <p:ajax event="rowEdit" listener="#{item.onEdit}" />  
-                                    <p:ajax event="rowEditCancel" listener="#{item.onCancel}" /> 
+                                    <p:ajax event="rowEdit" listener="#{registerController.onEdit}" />  
+                                    <p:ajax event="rowEditCancel" listener="#{registerController.onCancel}" /> 
                                     <p:column>
                                         <f:facet name="header">  
                                             <h:outputText value="Place Name" />  
                                         </f:facet>
                                         <p:cellEditor>  
                                             <f:facet name="output">  
-                                                <h:outputText value="#{o.item}" />  
+                                                <h:outputText value="#{o.educatedPlaceName}" />  
                                             </f:facet>  
                                             <f:facet name="input">  
-                                                <p:inputText value="#{o.item}" style="width:100%"/>  
+                                                <p:inputText value="#{o.educatedPlaceName}" style="width:100%"/>  
                                             </f:facet>  
                                         </p:cellEditor> 
                                     </p:column>
@@ -301,10 +302,10 @@
                                         </f:facet>
                                         <p:cellEditor>  
                                             <f:facet name="output">  
-                                                <h:outputText value="#{o.qty}" />  
+                                                <h:outputText value="#{o.duringTime}" />  
                                             </f:facet>  
                                             <f:facet name="input">  
-                                                <p:inputText value="#{o.qty}" style="width:100%"/>  
+                                                <p:inputText value="#{o.duringTime}" style="width:100%"/>  
                                             </f:facet>  
                                         </p:cellEditor>
                                     </p:column>
@@ -315,10 +316,10 @@
                                         </f:facet>
                                         <p:cellEditor>  
                                             <f:facet name="output">  
-                                                <h:outputText value="#{o.price}" />  
+                                                <h:outputText value="#{o.anddress}" />  
                                             </f:facet>  
                                             <f:facet name="input">  
-                                                <p:inputText value="#{o.price}" style="width:100%"/>  
+                                                <p:inputText value="#{o.anddress}" style="width:100%"/>  
                                             </f:facet>  
                                         </p:cellEditor>
                                     </p:column>               
@@ -339,7 +340,7 @@
 
                             </p:panel>
                         </p:tab>
--->
+
                     </p:wizard>
                 </h:form>
 
