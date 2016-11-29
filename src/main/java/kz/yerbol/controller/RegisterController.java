@@ -31,6 +31,7 @@ public class RegisterController implements Serializable {
   }
  
   public String addAction() {
+
     Student st = new Student();
     Educationhistory orderitem = new Educationhistory(st, educationhistory.getEducatedPlaceName(), educationhistory.getDuringTime(),
      educationhistory.getAnddress());
@@ -41,12 +42,15 @@ public class RegisterController implements Serializable {
     educationhistory.setAnddress("");
     return null;
   }
+
     public void onEdit(RowEditEvent event) {  
+
         FacesMessage msg = new FacesMessage("Item Edited",((Educationhistory) event.getObject()).getEducatedPlaceName());  
         FacesContext.getCurrentInstance().addMessage(null, msg);  
     }  
        
     public void onCancel(RowEditEvent event) {  
+
         FacesMessage msg = new FacesMessage("Item Cancelled");   
         FacesContext.getCurrentInstance().addMessage(null, msg); 
         historyList.remove((Educationhistory) event.getObject());
@@ -58,12 +62,13 @@ public class RegisterController implements Serializable {
     //EducationhistoryServiceImpl educationhistoryService = new EducationhistoryServiceImpl();
     
     try {
-      studentService.addStudent(student, specialty.getIdspecialty());
+      studentService.addStudent(student, 1);
+      FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Success", "Please check your email address."));
     }
     catch(Exception ex) {
       ex.printStackTrace();
+      FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", "Please check all inputs."));
     }
-
   }
 
 

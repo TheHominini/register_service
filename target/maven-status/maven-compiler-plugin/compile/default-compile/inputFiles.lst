@@ -1,6 +1,7 @@
 C:\Users\Yerbol\Documents\TEST\test_maven\Register\src\main\java\kz\yerbol\domain\Specialty.java
 C:\Users\Yerbol\Documents\TEST\test_maven\Register\src\main\java\kz\yerbol\domain\Educationhistory.java
 C:\Users\Yerbol\Documents\TEST\test_maven\Register\src\main\java\kz\yerbol\controller\HibernateUtil.java
+C:\Users\Yerbol\Documents\TEST\test_maven\Register\src\main\java\kz\yerbol\service\impl\FacultyServiceImpl.java
 C:\Users\Yerbol\Documents\TEST\test_maven\Register\src\main\java\kz\yerbol\service\EmailSenderService.java
 C:\Users\Yerbol\Documents\TEST\test_maven\Register\src\main\java\kz\yerbol\domain\Student.java
 C:\Users\Yerbol\Documents\TEST\test_maven\Register\src\main\java\kz\yerbol\service\EducationhistoryService.java

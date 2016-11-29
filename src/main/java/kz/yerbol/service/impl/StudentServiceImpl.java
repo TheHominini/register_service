@@ -6,6 +6,7 @@ import org.hibernate.Query;
 import java.util.List;
 import java.util.Iterator;
 import kz.yerbol.domain.Student;
+import kz.yerbol.domain.*;
 import kz.yerbol.controller.HibernateUtil;
 
 
@@ -14,19 +15,24 @@ public class StudentServiceImpl implements StudentService {
   
   Session session = null;
 
-  public void StudentServiceImpl()  {
-    this.session = HibernateUtil.getSessionFactory().getCurrentSession();
-  }
 
   public void addStudent(Student student, int idSpecialty){
+
+    this.session = HibernateUtil.getSessionFactory().openSession();
     
     try {
-      org.hibernate.Transaction tx = session.beginTransaction();
-      Query q = session.createQuery("insert into Student(`id_specialty`, `FirstName`, `LastName`)"+
-      " values(" + 1 +", '"+ student.getFirstName() +"', '"+ student.getLastName() +"')");
-      q.executeUpdate();
+      Faculty f = new Faculty();
+      f.setIdFaculty(5);
+      f.setName("LL");
+      session.save(f);
+      session.close();
+      
     } catch (Exception e) {
       e.printStackTrace();
+      if (session != null && session.isOpen()){
+        session.close();
+      }
+      
     }
   }
 

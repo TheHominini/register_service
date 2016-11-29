@@ -1,0 +1,6 @@
+@echo off
+echo Deleting...
+del C:\Programs\wildfly-10.1.0.Final\standalone\deployments\%1.*
+
+echo Copying...
+xcopy target\%1.war C:\Programs\wildfly-10.1.0.Final\standalone\deployments
