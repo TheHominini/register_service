@@ -33,7 +33,7 @@ public class Specialty  implements java.io.Serializable {
 		@Column(name = "name")
     private String name;
 
-		@OneToMany(mappedBy = "Specialty")
+		@OneToMany(mappedBy = "specialty")
     private Set<Student> students = new HashSet<Student>(0);
 
     public Specialty() {

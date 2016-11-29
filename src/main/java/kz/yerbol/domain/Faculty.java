@@ -24,7 +24,7 @@ public class Faculty  implements java.io.Serializable {
 		@Column(name = "name")
     private String name;
 
-		@OneToMany(mappedBy = "Faculty")
+		@OneToMany(mappedBy = "faculty")
     private Set<Specialty> specialties = new HashSet<Specialty>(0);
 
     public Faculty() {
