@@ -6,6 +6,8 @@ kz\yerbol\service\FacultyService.class
 kz\yerbol\domain\Specialty.class
 kz\yerbol\service\EducationhistoryService.class
 kz\yerbol\domain\Educationhistory.class
+kz\yerbol\controller\DropDownView.class
+kz\yerbol\dao\RegisterDAO.class
 kz\yerbol\domain\Student.class
 kz\yerbol\service\impl\FacultyServiceImpl.class
 kz\yerbol\service\impl\EducationhistoryServiceImpl.class

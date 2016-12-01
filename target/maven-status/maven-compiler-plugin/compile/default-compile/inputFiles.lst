@@ -7,8 +7,10 @@ C:\Users\Yerbol\Documents\TEST\test_maven\Register\src\main\java\kz\yerbol\domai
 C:\Users\Yerbol\Documents\TEST\test_maven\Register\src\main\java\kz\yerbol\service\EducationhistoryService.java
 C:\Users\Yerbol\Documents\TEST\test_maven\Register\src\main\java\kz\yerbol\service\impl\StudentServiceImpl.java
 C:\Users\Yerbol\Documents\TEST\test_maven\Register\src\main\java\kz\yerbol\service\StudentService.java
+C:\Users\Yerbol\Documents\TEST\test_maven\Register\src\main\java\kz\yerbol\dao\RegisterDAO.java
 C:\Users\Yerbol\Documents\TEST\test_maven\Register\src\main\java\kz\yerbol\service\FacultyService.java
 C:\Users\Yerbol\Documents\TEST\test_maven\Register\src\main\java\kz\yerbol\service\impl\EducationhistoryServiceImpl.java
+C:\Users\Yerbol\Documents\TEST\test_maven\Register\src\main\java\kz\yerbol\controller\DropDownView.java
 C:\Users\Yerbol\Documents\TEST\test_maven\Register\src\main\java\kz\yerbol\service\SpecialtyService.java
 C:\Users\Yerbol\Documents\TEST\test_maven\Register\src\main\java\kz\yerbol\controller\RegisterController.java
 C:\Users\Yerbol\Documents\TEST\test_maven\Register\src\main\java\kz\yerbol\domain\Faculty.java

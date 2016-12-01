@@ -8,32 +8,21 @@ import java.util.Iterator;
 import kz.yerbol.domain.Student;
 import kz.yerbol.domain.*;
 import kz.yerbol.controller.HibernateUtil;
+import kz.yerbol.dao.RegisterDAO;
 
 
 
 public class StudentServiceImpl implements StudentService {
   
-  Session session = null;
+  RegisterDAO dao = new RegisterDAO();
 
 
-  public void addStudent(Student student, int idSpecialty){
+  public Boolean addStudent(Student student, Specialty specialty){
 
-    this.session = HibernateUtil.getSessionFactory().openSession();
-    
-    try {
-      Faculty f = new Faculty();
-      f.setIdFaculty(5);
-      f.setName("LL");
-      session.save(f);
-      session.close();
-      
-    } catch (Exception e) {
-      e.printStackTrace();
-      if (session != null && session.isOpen()){
-        session.close();
-      }
-      
-    }
+    student.setSpecialty(specialty);
+
+    System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"+student.getFirstName());
+    return dao.addStudent(student);
   }
 
   public void removeStudent(){

@@ -236,24 +236,32 @@
                         <p:tab id="register" title="Registration">
                             <p:panel header="Registration Information"  style="height: 370px">
                                 <p:messages />
-<!--
+
                                 <reusable:recomp
                                     facultyLable="Faculty"
                                     facultyValue="#{registerController.faculty.name}"
                                     specialtyLable="Specialty"
                                     specialtyValue="#{registerController.specialty.name}"
+                                    specialtyId="#{registerController.specialty.idspecialty}"
                                     />
--->
+                                    
                                 <h:panelGrid columns="2" columnClasses="label, value">
 
                                     <h:outputText value="Level: " />
-                                    <p:inputText value="#{registerController.student.eduLevel}"/>
+                                    <p:selectOneMenu value="#{registerController.student.eduLevel}" label="Level">
+                                        <f:selectItem itemLabel="Bachelor" itemValue="bachelor"/>
+                                        <f:selectItem itemLabel="Master" itemValue="master"/>
+                                        <f:selectItem itemLabel="PhD" itemValue="phd"/>
+                                    </p:selectOneMenu>
 
                                     <h:outputText value="Entry year: " />
                                     <p:inputText value="#{registerController.student.entryYear}"/>
 
                                     <h:outputText value="Payment type: " />
-                                    <p:inputText value="#{registerController.student.paymenttype}"/>
+                                    <p:selectOneMenu value="#{registerController.student.paymenttype}" label="Payment type">
+                                        <f:selectItem itemLabel="Grant" itemValue="grant"/>
+                                        <f:selectItem itemLabel="Payment" itemValue="payment"/>
+                                    </p:selectOneMenu>
 
                                 </h:panelGrid>
                             </p:panel>
@@ -332,7 +340,7 @@
                             <p:panel header="Upload Photo"  style="height: 370px">
                                 
 
-                                    <!--<p:fileUpload value="#{fileUploadView.file}" mode="simple" />-->
+                                    <p:fileUpload value="#{registerController.student.imagePath}" mode="simple" />
                                     <p:commandButton value="Register" ajax="false" action="#{registerController.register}" />
 
                                     <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />

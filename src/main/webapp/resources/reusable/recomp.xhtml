@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:p="http://primefaces.org/ui"
+      >
+
+    <composite:interface>
+
+        <composite:attribute name="facultyLable" />
+        <composite:attribute name="facultyValue" />
+        <composite:attribute name="specialtyLable" />
+        <composite:attribute name="specialtyValue" />
+        <composite:attribute name="specialtyId" />
+        
+
+    </composite:interface>
+
+    <composite:implementation>
+
+        <h:panelGrid columns="2" columnClasses="label, value" style="width: 450px">
+            <h:outputText value="#{cc.attrs.facultyLable}" />
+            <p:selectOneMenu id="country" value="#{dropDownView.faculty}" style="width:190px">
+                <p:ajax listener="#{dropDownView.onFacultyChange}" update="specialty" />
+                <f:selectItem itemLabel="Select Faculty" itemValue="" noSelectionOption="true" />
+                <f:selectItems value="#{dropDownView.faculties}" />
+            </p:selectOneMenu>
+ 
+            <h:outputText value="#{cc.attrs.specialtyLable}"/>
+            <p:selectOneMenu id="specialty" value="#{dropDownView.specialty}" style="width:190px">
+                <p:ajax listener="#{dropDownView.onSpecialtyChange}" update="specialtyId" />
+                <f:selectItem itemLabel="Select Specialty" itemValue="" noSelectionOption="true" />
+                <f:selectItems value="#{dropDownView.specialties}" />
+            </p:selectOneMenu>
+        </h:panelGrid>
+        
+        <p:inputText id="specialtyId" value="#{dropDownView.specialtyId}" style="visibility: hidden;" />
+ 
+    </composite:implementation>
+
+</html>

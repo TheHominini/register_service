@@ -7,8 +7,11 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import java.util.ArrayList;
 import org.primefaces.event.RowEditEvent;
+import java.util.Map;
+import java.util.HashMap;
 import kz.yerbol.domain.*;
 import kz.yerbol.service.impl.*;
+
 
 
  
@@ -24,12 +27,33 @@ public class RegisterController implements Serializable {
   private Specialty specialty = new Specialty();
   private Educationhistory educationhistory = new Educationhistory();
 
+
+  public void register(){
+    
+    StudentServiceImpl studentService = new StudentServiceImpl();
+    //EducationhistoryServiceImpl educationhistoryService = new EducationhistoryServiceImpl();
+    
+    try {
+      if (studentService.addStudent(student, specialty)){
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Success", "Please check your email address."));
+      }
+      else{
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", "Registration was failed."));
+      }
+    }
+    catch(Exception ex) {
+      ex.printStackTrace();
+      FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", "Please check all inputs."));
+    }
+  }
+
+
   private static final ArrayList<Educationhistory> historyList = new ArrayList<Educationhistory>();
  
   public ArrayList<Educationhistory> getHistoryList() {
         return historyList;
   }
- 
+
   public String addAction() {
 
     Student st = new Student();
@@ -56,20 +80,6 @@ public class RegisterController implements Serializable {
         historyList.remove((Educationhistory) event.getObject());
     }
 
-  public void register(){
-    
-    StudentServiceImpl studentService = new StudentServiceImpl();
-    //EducationhistoryServiceImpl educationhistoryService = new EducationhistoryServiceImpl();
-    
-    try {
-      studentService.addStudent(student, 1);
-      FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Success", "Please check your email address."));
-    }
-    catch(Exception ex) {
-      ex.printStackTrace();
-      FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", "Please check all inputs."));
-    }
-  }
 
 
   public Student getStudent() {

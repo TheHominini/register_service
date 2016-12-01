@@ -42,7 +42,7 @@ public class Student  implements java.io.Serializable {
 		@Column(name = "EntryYEar")
 		private Date entryYear;
 
-		@Column(name = "eduLevel")
+		@Column(name = "edu_Level")
 		private String eduLevel;
 
 		@Column(name = "paymenttype")
@@ -120,7 +120,7 @@ public class Student  implements java.io.Serializable {
 		@Column(name = "matherAddress")
 		private String matherAddress;
 
-		@Column(name = "imagePath")
+		@Column(name = "image_Path")
 		private String imagePath;
 
 		@Column(name = "idEdu")

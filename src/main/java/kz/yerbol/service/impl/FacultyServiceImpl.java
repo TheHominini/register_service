@@ -6,29 +6,24 @@ import org.hibernate.Query;
 import kz.yerbol.controller.HibernateUtil;
 import kz.yerbol.service.FacultyService;
 import kz.yerbol.domain.Faculty;
+import kz.yerbol.dao.*;
 
 
 
 
 
 public class FacultyServiceImpl implements FacultyService{
-  Session session = null;
 
-  public FacultyServiceImpl(){
-    this.session = HibernateUtil.getSessionFactory().getCurrentSession();
+  private RegisterDAO dao = new RegisterDAO();
+  private String query;
 
-  }
+
   public List<Faculty> getFacultyList(){
+
+    query = "from Faculty";
     List<Faculty> facultyList = null;
-    try {
-      org.hibernate.Transaction tx = session.beginTransaction();
-      Query q = session.createQuery("from Faculty");
-      facultyList = (List<Faculty>) q.list();
-      return facultyList;
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-    return null;
+    facultyList = (List<Faculty>) dao.getList(query);
+    return facultyList;
   }
 
   public void addFaculty(){
