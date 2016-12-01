@@ -1,6 +1,8 @@
 package kz.yerbol.dao;
 
 import org.hibernate.Session;
+
+import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Query;
 import kz.yerbol.controller.HibernateUtil;
@@ -16,6 +18,7 @@ public class RegisterDAO {
   }
 
   public List getList(String query){
+
     List list = null;
     try {
       Query q = session.createQuery(query);
@@ -33,19 +36,33 @@ public class RegisterDAO {
       session.save(student);
       session.close();
       return Boolean.TRUE;
-      
+
     } catch (Exception e) {
       e.printStackTrace();
       if (session != null && session.isOpen()){
         session.close();
       }
-      
     }
     return Boolean.FALSE;
   }
 
-  public Integer getSpecialtyId(String name){
+  public Boolean addEducationhistory(Student student, List<Educationhistory> edhistory){
 
-    return 0;
+    ArrayList<Educationhistory> educationhistories = (ArrayList<Educationhistory>) edhistory;
+    for (Educationhistory education : educationhistories){
+      education.setStudent(student);
+      try {
+        session.save(education);
+        return Boolean.TRUE;
+        
+      } catch (Exception e) {
+        e.printStackTrace();
+        if (session != null && session.isOpen()){
+          session.close();
+        }
+      }
+    }
+    session.close();
+    return Boolean.FALSE;
   }
 }

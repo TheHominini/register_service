@@ -31,16 +31,20 @@ public class RegisterController implements Serializable {
   public void register(){
     
     StudentServiceImpl studentService = new StudentServiceImpl();
-    //EducationhistoryServiceImpl educationhistoryService = new EducationhistoryServiceImpl();
+    EducationhistoryServiceImpl educationhistoryService = new EducationhistoryServiceImpl();
+    EmailSenderServiceImpl eServiceImpl = new EmailSenderServiceImpl();
     
     try {
-      System.out.println(">>>>>>>>>>>>>>>>"+specialty.getName());
+      System.out.println(">>>>>>>>>>>>>>>>"+student.getStudentId());
       if (studentService.addStudent(student, specialty)){
-        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Success", "Please check your email address."));
-      }
-      else{
-        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", "Registration was failed."));
-      }
+        if (educationhistoryService.addEducationhistory(student, historyList)){
+          eServiceImpl.sendEmail(student.getEmail1());
+          FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Success", "Please check your email address."));
+        }
+        else{
+          FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", "Registration was failed."));
+        }
+        }
     }
     catch(Exception ex) {
       ex.printStackTrace();

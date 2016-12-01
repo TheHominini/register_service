@@ -247,6 +247,9 @@
                                     
                                 <h:panelGrid columns="2" columnClasses="label, value">
 
+                                    <h:outputText value="Student ID: " />
+                                    <p:inputText value="#{registerController.student.studentId}"/>
+
                                     <h:outputText value="Level: " />
                                     <p:selectOneMenu value="#{registerController.student.eduLevel}" label="Level">
                                         <f:selectItem itemLabel="Bachelor" itemValue="bachelor"/>

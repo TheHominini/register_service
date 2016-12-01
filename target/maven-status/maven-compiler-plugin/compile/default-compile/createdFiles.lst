@@ -1,6 +1,8 @@
 kz\yerbol\service\StudentService.class
+kz\yerbol\service\EmailSenderService.class
 kz\yerbol\controller\RegisterController.class
 kz\yerbol\controller\HibernateUtil.class
+kz\yerbol\service\impl\EmailSenderServiceImpl$1.class
 kz\yerbol\service\SpecialtyService.class
 kz\yerbol\service\FacultyService.class
 kz\yerbol\domain\Specialty.class
@@ -13,3 +15,4 @@ kz\yerbol\service\impl\FacultyServiceImpl.class
 kz\yerbol\service\impl\EducationhistoryServiceImpl.class
 kz\yerbol\domain\Faculty.class
 kz\yerbol\service\impl\StudentServiceImpl.class
+kz\yerbol\service\impl\EmailSenderServiceImpl.class
