@@ -43,4 +43,9 @@ public class RegisterDAO {
     }
     return Boolean.FALSE;
   }
+
+  public Integer getSpecialtyId(String name){
+
+    return 0;
+  }
 }

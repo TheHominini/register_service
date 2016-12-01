@@ -11,14 +11,22 @@ and open the template in the editor.
       xmlns:composite="http://java.sun.com/jsf/composite"
       xmlns:p="http://primefaces.org/ui"
       >
-
+<!--
+      <script>
+        function get_value(){
+            document.getElementById("fac").value = document.getElementById("faculty").value;
+            document.getElementById("spec").innerHTML = document.getElementById("specialty").value;
+            document.getElementById("specId").innerHTML = document.getElementById("specialtyId").value;             
+        }
+      </script>
+-->
     <composite:interface>
 
         <composite:attribute name="facultyLable" />
         <composite:attribute name="facultyValue" />
         <composite:attribute name="specialtyLable" />
         <composite:attribute name="specialtyValue" />
-        <composite:attribute name="specialtyId" />
+        <!--<composite:attribute name="specialtyId" />      Try to get specialty id-->
         
 
     </composite:interface>
@@ -27,7 +35,7 @@ and open the template in the editor.
 
         <h:panelGrid columns="2" columnClasses="label, value" style="width: 450px">
             <h:outputText value="#{cc.attrs.facultyLable}" />
-            <p:selectOneMenu id="country" value="#{dropDownView.faculty}" style="width:190px">
+            <p:selectOneMenu id="faculty" value="#{dropDownView.faculty}" style="width:190px">
                 <p:ajax listener="#{dropDownView.onFacultyChange}" update="specialty" />
                 <f:selectItem itemLabel="Select Faculty" itemValue="" noSelectionOption="true" />
                 <f:selectItems value="#{dropDownView.faculties}" />
@@ -41,7 +49,12 @@ and open the template in the editor.
             </p:selectOneMenu>
         </h:panelGrid>
         
-        <p:inputText id="specialtyId" value="#{dropDownView.specialtyId}" style="visibility: hidden;" />
+        <p:inputText id="specialtyId" value="#{dropDownView.specialtyId}" style="visibility: hidden;"/>
+<!--
+        <h:inputText id="fac" value="#{cc.attrs.facultyValue}" style="visibility: visible;" />
+        <h:inputText id="spec" value="#{cc.attrs.specialtyValue}" style="visibility: visible;" />
+        <h:inputText id="specId" value="#{cc.attrs.specialtyId}" style="visibility: visible;" />      Try to get specialty id-->
+        
  
     </composite:implementation>
 

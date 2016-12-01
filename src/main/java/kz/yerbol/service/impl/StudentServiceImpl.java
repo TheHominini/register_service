@@ -20,8 +20,6 @@ public class StudentServiceImpl implements StudentService {
   public Boolean addStudent(Student student, Specialty specialty){
 
     student.setSpecialty(specialty);
-
-    System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"+student.getFirstName());
     return dao.addStudent(student);
   }
 

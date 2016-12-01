@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.Set;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import java.util.List;
 import java.util.Iterator;
@@ -16,6 +17,9 @@ import kz.yerbol.domain.Specialty;
 @ManagedBean
 @ViewScoped
 public class DropDownView implements Serializable {
+
+    @ManagedProperty("#{registerController}")
+    private RegisterController registerController;
 
     private Map<String, Map<String, String>> data = new HashMap<String, Map<String, String>>();
     private String faculty;
@@ -37,7 +41,7 @@ public class DropDownView implements Serializable {
 				
 				List<Faculty> facultyList = facultyService.getFacultyList();
 
-				specialtiesId = new HashMap<String, Integer>();
+				specialtiesId = new HashMap<String, Integer>();        
         
 				for (Faculty localFaculty : facultyList){
 					faculties.put(localFaculty.getName(), localFaculty.getName());
@@ -46,7 +50,7 @@ public class DropDownView implements Serializable {
 
             for (Specialty localSpecialty : specialtySet){
 							map.put(localSpecialty.getName(), localSpecialty.getName());
-                System.out.println(">>>>>>>>>>>>>>>>>>>>>>"+localSpecialty.getIdspecialty());
+                // System.out.println(">>>>>>>>>>>>>>>>>>>>>>"+localSpecialty.getIdspecialty());          Try to get specialty id
                 specialtiesId.put(localSpecialty.getName(), localSpecialty.getIdspecialty());
             }
 
@@ -96,7 +100,7 @@ public class DropDownView implements Serializable {
         this.specialty = specialty;
     }
 
-		public Integer getSpecialtyId(){
+		public Integer getSpecialtyId(){              
 			return specialtyId;
 		}
 
@@ -114,6 +118,11 @@ public class DropDownView implements Serializable {
         return specialties;
     }
 
+
+		 public void setRegisterController(RegisterController rController) {
+        this.registerController = rController;
+    }
+
     public void onFacultyChange() {
         if (faculty != null && !faculty.equals("")) {
             specialties = data.get(faculty);
@@ -122,9 +131,11 @@ public class DropDownView implements Serializable {
         }
     }
 
-		public void onSpecialtyChange() {
+		public void onSpecialtyChange() {      
         if (specialty != null && !specialty.equals("")) {
             specialtyId = specialtiesId.get(specialty);
+						registerController.getSpecialty().setName(specialty);
+						registerController.getSpecialty().setIdspecialty(specialtyId);
         } else {
             specialtyId = 0;
         }

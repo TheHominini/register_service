@@ -34,6 +34,7 @@ public class RegisterController implements Serializable {
     //EducationhistoryServiceImpl educationhistoryService = new EducationhistoryServiceImpl();
     
     try {
+      System.out.println(">>>>>>>>>>>>>>>>"+specialty.getName());
       if (studentService.addStudent(student, specialty)){
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Success", "Please check your email address."));
       }
