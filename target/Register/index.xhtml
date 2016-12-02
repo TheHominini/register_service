@@ -55,7 +55,7 @@
                                     <p:inputText value="#{registerController.student.lastName}" label="Lastname"/>
 
                                     <h:outputText value="Birthday: " />
-                                    <p:inputMask value="#{registerController.student.birthday}" label="Birthday" mask="9999-99-99"/>
+        														<p:calendar value="#{registerController.student.birthday}" pattern="dd-MM-yyyy" mask="true" />
 
                                     <h:outputText value="Gender: " />
                                     <p:selectOneRadio value="#{registerController.student.gender}" label="Gender">
@@ -100,7 +100,8 @@
                                     <p:inputText value="#{registerController.student.docNumber}"/>
 
                                     <h:outputText value="Expire time: " />
-                                    <p:inputText value="#{registerController.student.docExpiretime}"/>
+        														<p:calendar value="#{registerController.student.docExpiretime}" pattern="dd-MM-yyyy" mask="true" />
+																		
 
                                     <h:outputText value="Issue organization: " />
                                     <p:selectOneMenu value="#{registerController.student.docIssueOrgnazation}" label="Document type">
@@ -258,7 +259,7 @@
                                     </p:selectOneMenu>
 
                                     <h:outputText value="Entry year: " />
-                                    <p:inputText value="#{registerController.student.entryYear}"/>
+																		<p:calendar value="#{registerController.student.entryYear}" pattern="yyyy" mask="true" yearRange="-10" />
 
                                     <h:outputText value="Payment type: " />
                                     <p:selectOneMenu value="#{registerController.student.paymenttype}" label="Payment type">

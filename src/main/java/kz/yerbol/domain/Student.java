@@ -239,7 +239,8 @@ public class Student  implements java.io.Serializable {
 		}
 		
 		public void setBirthday(Date birthday) {
-				this.birthday = birthday;
+			this.birthday = birthday;
+			
 		}
 		public String getTelephone1() {
 				return this.telephone1;
