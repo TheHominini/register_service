@@ -11,8 +11,7 @@ import javax.faces.bean.ViewScoped;
 import java.util.List;
 import java.util.Iterator;
 import kz.yerbol.service.impl.FacultyServiceImpl;
-import kz.yerbol.domain.Faculty;
-import kz.yerbol.domain.Specialty;
+import kz.yerbol.dao.domain.*;
 
 @ManagedBean
 @ViewScoped

@@ -2,7 +2,7 @@ import java.util.LinkedList;
 import java.util.List;
 import org.junit.Test;
 import org.junit.Assert;
-import kz.yerbol.domain.*;
+import kz.yerbol.dao.domain.*;
 
 import kz.yerbol.service.impl.FacultyServiceImpl;
 public class FacultyServiceTest{

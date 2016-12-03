@@ -1,11 +1,8 @@
 package kz.yerbol.service.impl;
 
 import java.util.List;
-import org.hibernate.Session;
-import org.hibernate.Query;
-import kz.yerbol.controller.HibernateUtil;
 import kz.yerbol.service.FacultyService;
-import kz.yerbol.domain.Faculty;
+import kz.yerbol.dao.domain.*;
 import kz.yerbol.dao.*;
 
 

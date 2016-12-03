@@ -10,9 +10,9 @@
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
     <property name="hibernate.show_sql">true</property>
 
-    <mapping class="kz.yerbol.domain.Student"/>
-    <mapping class="kz.yerbol.domain.Faculty"/>
-    <mapping class="kz.yerbol.domain.Specialty"/>
-    <mapping class="kz.yerbol.domain.Educationhistory"/>
+    <mapping class="kz.yerbol.dao.domain.Student"/>
+    <mapping class="kz.yerbol.dao.domain.Faculty"/>
+    <mapping class="kz.yerbol.dao.domain.Specialty"/>
+    <mapping class="kz.yerbol.dao.domain.Educationhistory"/>
   </session-factory>
 </hibernate-configuration>

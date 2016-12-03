@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import org.primefaces.event.RowEditEvent;
 import java.util.Map;
 import java.util.HashMap;
-import kz.yerbol.domain.*;
 import kz.yerbol.service.impl.*;
+import kz.yerbol.dao.domain.*;
 
 
 
@@ -32,19 +32,14 @@ public class RegisterController implements Serializable {
     
     StudentServiceImpl studentService = new StudentServiceImpl();
     EducationhistoryServiceImpl educationhistoryService = new EducationhistoryServiceImpl();
-    EmailSenderServiceImpl eServiceImpl = new EmailSenderServiceImpl();
     
     try {
-      System.out.println(">>>>>>>>>>>>>>>>"+student.getStudentId());
-      if (studentService.addStudent(student, specialty)){
-        if (educationhistoryService.addEducationhistory(student, historyList)){
-          eServiceImpl.sendEmail(student.getEmail1());
-          FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Success", "Please check your email address."));
-        }
-        else{
-          FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", "Registration was failed."));
-        }
-        }
+      // System.out.println(">>>>>>>>>>>>>>>>"+student.getStudentId());
+        studentService.addStudent(student, specialty);
+        
+        // educationhistoryService.addEducationhistory(student, historyList);
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Success", "Please check your email address."));
+        
     }
     catch(Exception ex) {
       ex.printStackTrace();

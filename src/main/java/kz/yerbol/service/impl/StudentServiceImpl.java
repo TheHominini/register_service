@@ -1,14 +1,8 @@
 package kz.yerbol.service.impl;
 
 import kz.yerbol.service.StudentService;
-import org.hibernate.Session;
-import org.hibernate.Query;
-import java.util.List;
-import java.util.Iterator;
-import kz.yerbol.domain.Student;
-import kz.yerbol.domain.*;
-import kz.yerbol.controller.HibernateUtil;
-import kz.yerbol.dao.RegisterDAO;
+import kz.yerbol.dao.domain.*;
+import kz.yerbol.dao.*;
 
 
 
@@ -17,10 +11,12 @@ public class StudentServiceImpl implements StudentService {
   RegisterDAO dao = new RegisterDAO();
 
 
-  public Boolean addStudent(Student student, Specialty specialty){
+  public void addStudent(Student student, Specialty specialty){
+    EmailSenderServiceImpl eServiceImpl = new EmailSenderServiceImpl();
 
     student.setSpecialty(specialty);
-    return dao.addStudent(student);
+    eServiceImpl.sendEmail(student.getEmail1());
+    dao.addStudent(student);
   }
 
   public void removeStudent(){

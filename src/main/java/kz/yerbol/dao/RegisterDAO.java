@@ -5,8 +5,7 @@ import org.hibernate.Session;
 import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Query;
-import kz.yerbol.controller.HibernateUtil;
-import kz.yerbol.domain.*;
+import kz.yerbol.dao.domain.*;
 
 
 public class RegisterDAO {
@@ -30,39 +29,36 @@ public class RegisterDAO {
     return null;
   }
 
-  public Boolean addStudent(Student student){
+  public void addStudent(Student student){
 
     try {
       session.save(student);
       session.close();
-      return Boolean.TRUE;
-
+     
     } catch (Exception e) {
       e.printStackTrace();
       if (session != null && session.isOpen()){
         session.close();
       }
     }
-    return Boolean.FALSE;
   }
 
-  public Boolean addEducationhistory(Student student, List<Educationhistory> edhistory){
+  public void addEducationhistory(Student student, List<Educationhistory> edhistory){
 
     ArrayList<Educationhistory> educationhistories = (ArrayList<Educationhistory>) edhistory;
     for (Educationhistory education : educationhistories){
       education.setStudent(student);
-      try {
-        session.save(education);
-        return Boolean.TRUE;
+    //   try {
+    //     session.save(education);
         
-      } catch (Exception e) {
-        e.printStackTrace();
-        if (session != null && session.isOpen()){
-          session.close();
-        }
-      }
-    }
-    session.close();
-    return Boolean.FALSE;
+    //   } catch (Exception e) {
+    //     e.printStackTrace();
+    //     if (session != null && session.isOpen()){
+    //       session.close();
+    //     }
+    //   }
+    // }
+    // session.close();
   }
+}
 }

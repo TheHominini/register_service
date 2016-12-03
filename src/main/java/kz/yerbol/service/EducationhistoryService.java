@@ -1,10 +1,9 @@
 package kz.yerbol.service;
 
 import java.util.List;
-import kz.yerbol.domain.Educationhistory;
-import kz.yerbol.domain.Student;
+import kz.yerbol.dao.domain.*;
 
 public interface EducationhistoryService  {
-  public Boolean addEducationhistory(Student student, List<Educationhistory> edhistory);
+  public void addEducationhistory(Student student, List<Educationhistory> edhistory);
   public void removeEducationhistory();
 }

@@ -1,7 +1,7 @@
 package kz.yerbol.service;
 
 import java.util.List;
-import kz.yerbol.domain.Faculty;
+import kz.yerbol.dao.domain.*;
 
 /**
  *
