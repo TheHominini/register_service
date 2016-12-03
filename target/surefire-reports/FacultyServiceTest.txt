@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: FacultyServiceTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.12 sec
+=======
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.073 sec
+>>>>>>> c22aa40a71b2945d1a90185123f5eacea9f08d4b

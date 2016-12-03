@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<<<<<<< HEAD
 <testsuite tests="1" failures="0" name="FacultyServiceTest" time="2.035" errors="0" skipped="0">
+=======
+<testsuite tests="1" failures="0" name="FacultyServiceTest" time="2.013" errors="0" skipped="0">
+>>>>>>> c22aa40a71b2945d1a90185123f5eacea9f08d4b
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_45\jre\bin"/>
@@ -64,5 +68,9 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
+<<<<<<< HEAD
   <testcase classname="FacultyServiceTest" name="testGetFaculty" time="2.035"/>
+=======
+  <testcase classname="FacultyServiceTest" name="testGetFaculty" time="2.013"/>
+>>>>>>> c22aa40a71b2945d1a90185123f5eacea9f08d4b
 </testsuite>
